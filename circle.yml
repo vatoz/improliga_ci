@@ -36,9 +36,7 @@ dependencies:
     - git clone git@github.com:vatoz/wpimprov_vantage_child.git wordpress/wp-content/themes/wpimprov_vantage_child
     
     # composer  for wpimprov 
-    - cd ./wordpress/wp-content/plugins/wpimprov
-    - composer  install 
-    - cd  ../../../../
+    - cd ./wordpress/wp-content/plugins/wpimprov &&  composer  install && cd  ../../../../
     
     # Install Plugins
     - ./wp-cli.phar --path=wordpress plugin install googleanalytics --activate
