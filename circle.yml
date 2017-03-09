@@ -36,7 +36,7 @@ dependencies:
     - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://improliga.dev:8080 --title=WordPress 
     
     # composer  for wpimprov 
-    - cd ./wordpress/wp-content/plugins/wpimprov &&  composer  install && cd  ../../../../
+    - cd ./wp-content/plugins/wpimprov &&  composer  install 
     
     # Install Plugins
     - ./wp-cli.phar  plugin install googleanalytics --activate
