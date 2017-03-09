@@ -8,6 +8,10 @@ machine:
   # This will be added to the `/etc/hosts` file
   hosts:
     improliga.dev: 127.0.0.1
+checkout:
+  post:
+    - git submodule init 
+    - git submodule update
 
 dependencies:
   pre:
