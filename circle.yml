@@ -67,6 +67,6 @@ test:
   override:
     # This is just for us to see that the WP Pusher plugin was actually installed and is active
     - ./wp-cli.phar plugin list --path=wordpress
-    
+    - ./wp-cli.phar plugin list --path=wordpress >$CIRCLE_ARTIFACTS/tmp.log
     # Finally, run our Behat features
     #- vendor/bin/behat
