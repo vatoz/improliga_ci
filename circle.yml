@@ -48,7 +48,8 @@ dependencies:
     
     #composer  for wpimprov 
     - cd ./wordpress/wp-content/plugins/wpimprov
-    - composer.phar  --install 
+    - ~/composer.phar  --install 
+    - cd  
     
     # And use WP-CLI to activate it
     - ./wp-cli.phar plugin activate wpimprov --path=wordpress
