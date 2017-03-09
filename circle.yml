@@ -37,7 +37,7 @@ dependencies:
     
     # composer  for wpimprov 
     - cd ./wordpress/wp-content/plugins/wpimprov
-    - composer  --install 
+    - composer  install 
     - cd  ../../../../
     
     # Install Plugins
