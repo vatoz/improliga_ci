@@ -26,7 +26,7 @@ dependencies:
     - ./wp-cli.phar core download --allow-root --path=wordpress
     
     # Generate `wp-config.php` file
-    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbuser=ubuntu   --path=wordpress
+    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbhost=127.0.0.1 --dbuser=ubuntu   --path=wordpress
     
     # Install WordPress
     - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://improliga.dev:8080 --title=WordPress --path=wordpress
