@@ -31,6 +31,7 @@ dependencies:
     # Install WordPress
     - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://improliga.dev:8080 --title=WordPress --path=wordpress
     
+    # Install Plugins
     - ./wp-cli.phar --path=wordpress plugin install googleanalytics --activate
     - ./wp-cli.phar --path=wordpress plugin install ml-slider --activate
     - ./wp-cli.phar --path=wordpress plugin install siteorigin-panels --activate
@@ -38,6 +39,9 @@ dependencies:
     - ./wp-cli.phar --path=wordpress plugin install zalomeni --activate
     - ./wp-cli.phar --path=wordpress plugin install wp-super-cache --activate
            
+    # Install Parent theme
+     - ./wp-cli.phar --path=wordpress theme install vantage --activate
+     
     # Clone  plugin and theme from GitHub
     - git clone git@github.com:vatoz/wpimprov.git wordpress/wp-content/plugins/wpimprov
     - git clone git@github.com:vatoz/wpimprov_vantage_child.git wordpress/wp-content/themes/wpimprov_vantage_child
