@@ -58,10 +58,10 @@ dependencies:
     - find . 
   
     # Copy Apache conf into `site-available`
-    - cp  ~/improliga_ci/apache-ci.conf /etc/apache2/sites-available
+    - cp  ~/apache_ci.conf /etc/apache2/sites-available
     
     # Use `a2ensite` to create a symlink for the config
-    - a2ensite apache-ci.conf
+    - a2ensite apache_ci.conf
     
     # Restart the Apache server
     - sudo service apache2 restart
@@ -70,6 +70,5 @@ test:
   override:
     # This is just for us to see that the WP Pusher plugin was actually installed and is active
     - ./wp-cli.phar plugin list --path=wordpress
-    - ./wp-cli.phar plugin list --path=wordpress >$CIRCLE_ARTIFACTS/tmp.log
-    # Finally, run our Behat features
+        # Finally, run our Behat features
     #- vendor/bin/behat
