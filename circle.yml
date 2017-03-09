@@ -53,7 +53,7 @@ dependencies:
     
     # And use WP-CLI to activate it
     - ./wp-cli.phar plugin activate wpimprov --path=wordpress
-    - ./wp-cli.phar them activate wpimprov_vantage_child --path=wordpress
+    - ./wp-cli.phar theme activate wpimprov_vantage_child --path=wordpress
 
   post:
     # Copy Apache conf into `site-available`
