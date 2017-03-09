@@ -55,7 +55,7 @@ dependencies:
 
   post:
     # debug
-    - find . > $CIRCLE_ARTIFACTS/findfiles.log
+    - find . 
   
     # Copy Apache conf into `site-available`
     - cp  ~/improliga_ci/apache-ci.conf /etc/apache2/sites-available
