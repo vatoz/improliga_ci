@@ -40,7 +40,7 @@ dependencies:
     - ./wp-cli.phar --path=wordpress plugin install wp-super-cache --activate
            
     # Install Parent theme
-     - ./wp-cli.phar --path=wordpress theme install vantage --activate
+    - ./wp-cli.phar --path=wordpress theme install vantage --activate
      
     # Clone  plugin and theme from GitHub
     - git clone git@github.com:vatoz/wpimprov.git wordpress/wp-content/plugins/wpimprov
