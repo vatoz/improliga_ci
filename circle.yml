@@ -55,10 +55,10 @@ dependencies:
 
   post:
     # debug
-    - find . 
+    - find . |grep conf
   
     # Copy Apache conf into `site-available`
-    - cp  ~/apache_ci.conf /etc/apache2/sites-available
+    - cp  ./apache_ci.conf /etc/apache2/sites-available
     
     # Use `a2ensite` to create a symlink for the config
     - a2ensite apache_ci.conf
