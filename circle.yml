@@ -58,13 +58,13 @@ dependencies:
     - find . |grep conf
   
     # Copy Apache conf into `site-available`
-    - cp  ./apache_ci.conf /etc/apache2/sites-available
+    #- cp  ./apache_ci.conf /etc/apache2/sites-available
     
     # Use `a2ensite` to create a symlink for the config
-    - a2ensite apache_ci.conf
+    #- a2ensite apache_ci.conf
     
     # Restart the Apache server
-    - sudo service apache2 restart
+    #- sudo service apache2 restart
 
 test:
   override:
@@ -72,3 +72,7 @@ test:
     - ./wp-cli.phar plugin list --path=wordpress
         # Finally, run our Behat features
     #- vendor/bin/behat
+  post:
+    #- mkdir $CIRCLE_ARTIFACTS/json_output
+    -  tar czvf $CIRCLE_ARTIFACTS/improliga.tgz wordpress --exclude=wp-config.php
+
