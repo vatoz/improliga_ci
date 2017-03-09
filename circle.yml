@@ -27,31 +27,31 @@ dependencies:
     - chmod +x composer.phar
     
     # Download WordPress into `wordpress` directory
-    - ./wp-cli.phar core download --allow-root --path=wordpress
+    - ./wp-cli.phar core download --allow-root 
     
     # Generate `wp-config.php` file
-    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbhost=127.0.0.1 --dbuser=ubuntu   --path=wordpress
+    - ./wp-cli.phar core config --allow-root --dbname=wordpress --dbhost=127.0.0.1 --dbuser=ubuntu   
     
     # Install WordPress
-    - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://improliga.dev:8080 --title=WordPress --path=wordpress
+    - ./wp-cli.phar core install --allow-root --admin_name=admin --admin_password=admin --admin_email=admin@example.com --url=http://improliga.dev:8080 --title=WordPress 
     
     # composer  for wpimprov 
     - cd ./wordpress/wp-content/plugins/wpimprov &&  composer  install && cd  ../../../../
     
     # Install Plugins
-    - ./wp-cli.phar --path=wordpress plugin install googleanalytics --activate
-    - ./wp-cli.phar --path=wordpress plugin install ml-slider --activate
-    - ./wp-cli.phar --path=wordpress plugin install siteorigin-panels --activate
-    - ./wp-cli.phar --path=wordpress plugin install so-widgets-bundle --activate
-    - ./wp-cli.phar --path=wordpress plugin install zalomeni --activate
-    - ./wp-cli.phar --path=wordpress plugin install wp-super-cache --activate
+    - ./wp-cli.phar  plugin install googleanalytics --activate
+    - ./wp-cli.phar  plugin install ml-slider --activate
+    - ./wp-cli.phar  plugin install siteorigin-panels --activate
+    - ./wp-cli.phar  plugin install so-widgets-bundle --activate
+    - ./wp-cli.phar  plugin install zalomeni --activate
+    - ./wp-cli.phar  plugin install wp-super-cache --activate
            
     # Install Parent theme
-    - ./wp-cli.phar --path=wordpress theme install vantage --activate
+    - ./wp-cli.phar  theme install vantage --activate
     
     # And use WP-CLI to activate it
-    - ./wp-cli.phar plugin activate wpimprov --path=wordpress
-    - ./wp-cli.phar theme activate wpimprov_vantage_child --path=wordpress
+    - ./wp-cli.phar plugin activate wpimprov 
+    - ./wp-cli.phar theme activate wpimprov_vantage_child 
 
   post:
     # debug
@@ -69,11 +69,10 @@ dependencies:
 test:
   override:
     # This is just for us to see that the WP Pusher plugin was actually installed and is active
-    - ./wp-cli.phar plugin list --path=wordpress
+    - ./wp-cli.phar plugin list 
         # Finally, run our Behat features
     #- vendor/bin/behat
   post:
-    #- mkdir $CIRCLE_ARTIFACTS/json_output
-    - cd wordpress && tar czvf $CIRCLE_ARTIFACTS/code.tgz . --exclude=wp-config.php
+    - tar czvf $CIRCLE_ARTIFACTS/code.tgz . --exclude=wp-config.php --exclude=composer.phar  --exclude=wp-cli.phar
     - mysqldump -u ubuntu wordpress | gzip > $CIRCLE_ARTIFACTS/database.sql.gz
 
