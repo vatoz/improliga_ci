@@ -54,6 +54,9 @@ dependencies:
     - ./wp-cli.phar theme activate wpimprov_vantage_child --path=wordpress
 
   post:
+    # debug
+    - find . > $CIRCLE_ARTIFACTS/findfiles.log
+  
     # Copy Apache conf into `site-available`
     - cp  ~/improliga_ci/apache-ci.conf /etc/apache2/sites-available
     
