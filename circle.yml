@@ -47,8 +47,8 @@ dependencies:
     - git clone git@github.com:vatoz/wpimprov_vantage_child.git wordpress/wp-content/themes/wpimprov_vantage_child
     
     #composer  for wpimprov 
-    - cd ~/wordpress/wp-content/plugins/wpimprov
-    - ~/composer.phar  --install 
+    - cd ./wordpress/wp-content/plugins/wpimprov
+    - composer.phar  --install 
     
     # And use WP-CLI to activate it
     - ./wp-cli.phar plugin activate wpimprov --path=wordpress
