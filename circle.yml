@@ -74,5 +74,6 @@ test:
     #- vendor/bin/behat
   post:
     #- mkdir $CIRCLE_ARTIFACTS/json_output
-    -  tar czvf $CIRCLE_ARTIFACTS/improliga.tgz wordpress --exclude=wp-config.php
+    - tar czvf $CIRCLE_ARTIFACTS/code.tgz wordpress --exclude=wp-config.php
+    - mysqldump -u ubuntu wordpress | gzip > $CIRCLE_ARTIFACTS/database.sql.gz
 
