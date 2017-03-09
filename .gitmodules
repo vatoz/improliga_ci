@@ -1,0 +1,6 @@
+[submodule "wordpress/wp-content/themes/wpimprov_vantage_child"]
+	path = wordpress/wp-content/themes/wpimprov_vantage_child
+	url = git@github.com:vatoz/wpimprov_vantage_child.git
+[submodule "wordpress/wp-content/plugins/wpimprov"]
+	path = wordpress/wp-content/plugins/wpimprov
+	url = git@github.com:vatoz/wpimprov.git
